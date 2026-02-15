@@ -55,7 +55,7 @@ Se o Google Chrome estiver travando com frequência, siga as etapas abaixo para 
 
 ### 5. Desativar Aceleração de Hardware
 - Acesse: `chrome://settings/system`
-- Desligue **“Usar aceleração de hardware quando disponível”**
+- Desligue **"Usar aceleração de hardware quando disponível"**
 - Reinicie o Chrome para aplicar as mudanças
 
 ---

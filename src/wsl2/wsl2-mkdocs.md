@@ -16,11 +16,11 @@ Este tutorial ensina a rodar projetos de documentação em Markdown usando MkDoc
    - *Explicação:* O Docker facilita a execução de ambientes isolados para rodar o MkDocs.
 
 3. **(Opcional) Instale o Portainer para gerenciar containers**
-   - Comando:
-
-     sudo docker run -d -p 9000:9000 --name portainer --restart=always \
-       -v /var/run/docker.sock:/var/run/docker.sock \
-       -v portainer_data:/data portainer/portainer-ce
+   ```bash
+   sudo docker run -d -p 9000:9000 --name portainer --restart=always \
+     -v /var/run/docker.sock:/var/run/docker.sock \
+     -v portainer_data:/data portainer/portainer-ce
+   ```
 
    - *Explicação:* O Portainer oferece uma interface web para gerenciar containers Docker.
 
@@ -49,21 +49,25 @@ Este tutorial ensina a rodar projetos de documentação em Markdown usando MkDoc
    - *Explicação:* O plugin mermaid2 permite criar diagramas dinâmicos na documentação.
 
 6. **(Se necessário) Construa a imagem Docker personalizada**
-   - Comando: `sudo docker build -t mkdocs-mermaid2 .`
+   ```bash
+   sudo docker build -t mkdocs-mermaid2 .
+   ```
    - *Explicação:* Cria uma imagem Docker com o plugin mermaid2 instalado.
 
 7. **Execute o container com a documentação**
    - Se precisar do plugin 'mermaid2':
-
+     ```bash
      sudo docker run -d -p 9002:8000 --name mkdocs-ea-devguides --restart=always \
        -v /mnt/c/gitlab/unj/cross/ea/devguides/ea-devguides/docs:/docs \
        -v mkdocs_data_ea-devguide:/data mkdocs-mermaid2
-
+     ```
+   
    - Se NÃO precisar do plugin 'mermaid2':
-
+     ```bash
      sudo docker run -d -p 9002:8000 --name mkdocs-ea-devguides --restart=always \
        -v /mnt/c/gitlab/unj/cross/ea/devguides/ea-devguides/docs:/docs \
        -v mkdocs_data_ea-devguide:/data squidfunk/mkdocs-material
+     ```
 
    - *Explicação:* O comando monta a pasta local no container e expõe a documentação na porta desejada.
 

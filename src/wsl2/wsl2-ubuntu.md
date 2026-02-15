@@ -16,7 +16,9 @@ Este tutorial explica como instalar o Ubuntu no WSL2, ativar a virtualização e
    - *Explicação:* O Ubuntu será sua distribuição Linux dentro do Windows.
 
 3. **Verifique se o WSL está na versão 2**
-   - Comando: `wsl --set-default-version 2`
+   ```bash
+   wsl --set-default-version 2
+   ```
    - *Explicação:* O WSL2 oferece melhor desempenho e compatibilidade com Docker e outras ferramentas.
 
 ---
